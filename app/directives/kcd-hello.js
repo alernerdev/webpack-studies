@@ -6,7 +6,7 @@ module.exports = function(ngModule) {
             templateUrl: 'directives/kcd-hello.html',
             controllerAs: 'vm',
             controller: function() {
-                var vm = this;
+                const vm = this;
                 vm.greeting = "Hello webpack";
             }
         }
