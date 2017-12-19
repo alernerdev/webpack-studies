@@ -6,8 +6,11 @@ module.exports = {
         filename: 'bundle.js'
     },
     module: {
-        loaders: [
-            {test: /\.js$/, exclude: /node_modules/, loader: ['babel-loader']}
+        rules: [
+            {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+			{test: /\.html$/, exclude: /node_modules/, loader: 'raw-loader'},
+			// loaders are run from right to left. So css runs first followed by style loader
+            {test: /\.css$/, exclude: /node_modules/, loader: 'style-loader!css-loader'}
         ]
     }
 };
