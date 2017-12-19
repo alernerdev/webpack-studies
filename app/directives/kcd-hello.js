@@ -1,4 +1,8 @@
 module.exports = function(ngModule) {
+	if (ON_TEST) {
+		require('./kcd-hello.test')(ngModule);
+	}
+
     ngModule.directive('kcdHello', function() {
 		require('./kcd-hello.css');
         return {
